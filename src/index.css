@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import "tailwindcss";
+
+/* Задаём тему с помощью CSS-переменных */
+@theme {
+  --color-bg: #1a191d;
+  --color-primary: #5abdce;
+  --font-mono: "Roboto Mono", monospace;
+  --animate-wiggle: wiggle 1s ease ;
+  --animate-header-in: header-in 1s ease;
+  @keyframes header-in {
+    0% { top: -100%; opacity: 1; }
+    100% { top: 0; opacity: 1; }
+  }
+  @keyframes out {
+    0% { top: 0;}
+    100% {
+      top: -100%;
+    }
+  }
+}
+body {
+  background: var(--color-bg);
+}
+@keyframes header-in {
+  0% { top: -100%; opacity: 1; }
+  100% { top: 0; opacity: 1; }
+}
+@keyframes header-out {
+  0% { top: 0; opacity: 1; }
+  100% { top: -100%; opacity: 0; }
+}
+@keyframes btn-in {
+  0% { transform: scale(0.7) rotate(-20deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes btn-out {
+  0% { transform: scale(1) rotate(0); opacity: 1; }
+  100% { transform: scale(0.7) rotate(20deg); opacity: 0; }
+}
+
+.animate-header-in {
+  animation: header-in 5s cubic-bezier(0.4,0,0.2,1);
+}
+.animate-header-out {
+  animation: header-out 5s cubic-bezier(0.4,0,0.2,1);
+}
+.animate-btn-in {
+  animation: btn-in 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.animate-btn-out {
+  animation: btn-out 0.4s cubic-bezier(0.4,0,0.2,1);
+}
