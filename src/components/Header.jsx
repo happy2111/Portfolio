@@ -40,8 +40,8 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className={`font-mono absolute flex items-center left-0 right-0 z-50 border-slate-700 transition-all duration-300 ${scrolled && "top-0 animate-[wiggle_0.5s] sticky bg-(--color-bg)/80 backdrop-blur-sm"}`}>
-      <nav className={`container mx-auto px-0 flex items-center ${scrolled ? "py-2" : "py-9"}`}>
+    <header className={`font-mono absolute flex items-center left-0 right-0 z-50 border-slate-700 transition-all duration-300 ${scrolled ? "top-0 animate-header-in sticky bg-(--color-bg)/80 backdrop-blur-sm" : ""}`}>
+      <nav className={`container mx-auto px-0 flex items-center ${scrolled ? "py-3 " : "py-9"}`}>
         {/* Кнопка открытия меню */}
         <button
           className={`md:hidden text-white bg-(--color-bg)/40 fixed left-6 mr-3 rounded-full  transition-transform duration-200 active:scale-90 hover:scale-105 shadow-lg
@@ -77,7 +77,7 @@ const Header = () => {
             {navLinks.map((link, index) => (<HashLink
                 key={link.to}
                 to={link.to}
-                className={`hovetext-blue-300r:text-white font-semibold transition-colors flex flex-col justify-center items-end ${scrolled ? "text-(--color-primary)" : "text-white"}`}
+                className={`hover:text-blue-300 text-white font-semibold transition-colors flex flex-col justify-center items-end ${scrolled ? "text-(--color-primary)" : "text-white"}`}
                 smooth
               >
                 <p className="text-[10px] text-base/1">0{index + 1}</p>

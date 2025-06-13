@@ -23,7 +23,7 @@ body {
   background: var(--color-bg);
 }
 @keyframes header-in {
-  0% { top: -100%; opacity: 1; }
+  0% { top: -100%; opacity: 0; }
   100% { top: 0; opacity: 1; }
 }
 @keyframes header-out {
@@ -40,10 +40,10 @@ body {
 }
 
 .animate-header-in {
-  animation: header-in 5s cubic-bezier(0.4,0,0.2,1);
+  animation: header-in 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 .animate-header-out {
-  animation: header-out 5s cubic-bezier(0.4,0,0.2,1);
+  animation: header-out 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 .animate-btn-in {
   animation: btn-in 0.4s cubic-bezier(0.4,0,0.2,1);
